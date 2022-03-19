@@ -6,6 +6,9 @@ let colorSelected;
 // Add a row
 function addR() {
     alert("Clicked Add Row"); // Replace this line with your code.
+    let table = document.getElementById("grid").children[0]; // select the table
+    let newRow = table.insertRow(); // create a new roll
+    for (let i = 0; i < numCols; i++) newRow.insertCell();
 }
 
 // Add a column
