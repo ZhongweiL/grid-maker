@@ -13,7 +13,11 @@ function addR() {
 
 // Add a column
 function addC() {
-    alert("Clicked Add Col"); // Replace this line with your code.
+    const table = document.getElementById("grid").children[0]; // select the table
+    for (const row of table.children) { // add a column for every row
+        row.insertCell();
+    }
+    numCols++; // update the number of columms
 }
 
 // Remove a row
