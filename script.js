@@ -8,7 +8,8 @@ function addR() {
     alert("Clicked Add Row"); // Replace this line with your code.
     let table = document.getElementById("grid").children[0]; // select the table
     let newRow = table.insertRow(); // create a new roll
-    for (let i = 0; i < numCols; i++) newRow.insertCell();
+    for (let i = 0; i < numCols; i++) newRow.insertCell(); // add columns for the new row
+    numRows++; // increment the number of rows
 }
 
 // Add a column
