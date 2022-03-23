@@ -22,7 +22,10 @@ function addC() {
 
 // Remove a row
 function removeR() {
-    alert("Clicked Remove Row"); // Replace this line with your code.
+    if (numRows == 0) return; // do nothing if the number of rows is 0
+    const table = document.getElementById("grid").children[0]; // select the table
+    table.deleteRow(-1); // remove the last row
+    numRows--; // update number of rows
 }
 
 // Remove a column
