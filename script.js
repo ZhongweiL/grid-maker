@@ -30,7 +30,12 @@ function removeR() {
 
 // Remove a column
 function removeC() {
-    alert("Clicked Remove Col"); // Replace this line with your code.
+    if (numCols == 0) return; // do nothing if the number of columns is 0
+    const table = document.getElementById("grid").children[0]; // select the table
+    for (const row of table.children) { // remove the last column for every row
+        row.deleteCell(-1);
+    }
+    numCols--; // update number of cols
 }
 
 // Set global variable for selected color
