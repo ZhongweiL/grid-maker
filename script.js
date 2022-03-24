@@ -4,17 +4,27 @@ let numCols = 3;
 let colorSelected; 
 const table = document.getElementById("grid").children[0]; // select the table
 
+for (const row of table.children) {
+    for (const cell of row.children) {
+        cell.addEventListener('click', changeColor); // add event listener for every cell
+    }
+}
+
 // Add a row
 function addR() {
     const newRow = table.insertRow(); // create a new roll
-    for (let i = 0; i < numCols; i++) newRow.insertCell(); // add columns for the new row
+    for (let i = 0; i < numCols; i++) {
+        const newCell = newRow.insertCell(); // add columns for the new row
+        newCell.addEventListener('click', changeColor); // add event listener for every new cell
+    }
     numRows++; // increment the number of rows
 }
 
 // Add a column
 function addC() {
     for (const row of table.children) { // add a column for every row
-        row.insertCell();
+        const newCell = row.insertCell();
+        newCell.addEventListener('click', changeColor); // add event listener for every new cell
     }
     numCols++; // update the number of columms
 }
@@ -69,4 +79,9 @@ function clearAll(){
             cell.style.backgroundColor = "";
         }
     }
+}
+
+// Change color on click
+function changeColor() {
+    this.style.backgroundColor = colorSelected;
 }
