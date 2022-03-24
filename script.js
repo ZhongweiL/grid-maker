@@ -2,10 +2,10 @@
 let numRows = 3;
 let numCols = 3;
 let colorSelected; 
+const table = document.getElementById("grid").children[0]; // select the table
 
 // Add a row
 function addR() {
-    const table = document.getElementById("grid").children[0]; // select the table
     const newRow = table.insertRow(); // create a new roll
     for (let i = 0; i < numCols; i++) newRow.insertCell(); // add columns for the new row
     numRows++; // increment the number of rows
@@ -13,7 +13,6 @@ function addR() {
 
 // Add a column
 function addC() {
-    const table = document.getElementById("grid").children[0]; // select the table
     for (const row of table.children) { // add a column for every row
         row.insertCell();
     }
@@ -23,7 +22,6 @@ function addC() {
 // Remove a row
 function removeR() {
     if (numRows == 0) return; // do nothing if the number of rows is 0
-    const table = document.getElementById("grid").children[0]; // select the table
     table.deleteRow(-1); // remove the last row
     numRows--; // update number of rows
 }
