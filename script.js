@@ -63,5 +63,10 @@ function fillAll(){
 
 // Clear all cells
 function clearAll(){
-    alert("Clicked Clear All"); // Replace this line with your code.
+    for (const row of table.children) {
+        for (const cell of row.children) {
+            // clear the color of all cells
+            cell.style.backgroundColor = "";
+        }
+    }
 }
