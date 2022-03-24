@@ -39,12 +39,16 @@ function removeC() {
 // Set global variable for selected color
 function selectColor(){
     colorSelected = document.getElementById("selectedColorId").value;
-    console.log(colorSelected);
 }
 
 // Fill all uncolored cells
 function fillU(){
-    alert("Clicked Fill All Uncolored"); // Replace this line with your code.
+    for (const row of table.children) {
+        for (const cell of row.children) {
+            // fill the cell with the selected if there isn't already a color
+            if (!cell.style.backgroundColor) cell.style.backgroundColor = colorSelected;
+        }
+    }
 }
 
 // Fill all cells
