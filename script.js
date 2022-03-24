@@ -45,7 +45,7 @@ function selectColor(){
 function fillU(){
     for (const row of table.children) {
         for (const cell of row.children) {
-            // fill the cell with the selected if there isn't already a color
+            // fill the cell with the selected color if there isn't already a color
             if (!cell.style.backgroundColor) cell.style.backgroundColor = colorSelected;
         }
     }
@@ -53,7 +53,12 @@ function fillU(){
 
 // Fill all cells
 function fillAll(){
-    alert("Clicked Fill All"); // Replace this line with your code.
+    for (const row of table.children) {
+        for (const cell of row.children) {
+            // fill the cell with the selected color
+            cell.style.backgroundColor = colorSelected;
+        }
+    }
 }
 
 // Clear all cells
